@@ -127,7 +127,9 @@ $app->get('/containers', function (Request $request, Response $response, array $
         'is_dri_device_enabled' => $configurationManager->isDriDeviceEnabled(),
         'is_talk_recording_enabled' => $configurationManager->isTalkRecordingEnabled(),
         'is_docker_socket_proxy_enabled' => $configurationManager->isDockerSocketProxyEnabled(),
-        'is_whiteboard_enabled' => $configurationManager->isWhiteboardEnabled(),        
+        'is_whiteboard_enabled' => $configurationManager->isWhiteboardEnabled(), 
+        'is_nvidia_runtime_enabled' => $configurationManager->isNvidiaRuntimeEnabled(),
+        'is_nvidia_gpu_deploy_enabled' => $configurationManager->isNvidiaDeployEnabled(),       
     ]);
 })->setName('profile');
 $app->get('/login', function (Request $request, Response $response, array $args) use ($container) {

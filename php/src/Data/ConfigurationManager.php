@@ -997,4 +997,27 @@ class ConfigurationManager
             return true;
         }
     }
+    
+    private function GetEnabledNvidiaGPUMode() : string {
+        $envVariableName = 'NEXTCLOUD_NVIDIA_GPU_MODE';
+        $configName = 'nextcloud_nvidia_gpu_mode';
+        $defaultValue = '';
+        return $this->GetEnvironmentalVariableOrConfig($envVariableName, $configName, $defaultValue);
+    }
+
+    public function isNvidiaRuntimeEnabled() : bool {
+        if ($this->GetEnabledNvidiaGPUMode() === 'runtime') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function isNvidiaDeployEnabled() : bool {
+        if ($this->GetEnabledNvidiaGPUMode() === 'deploy') {
+            return true;
+        } else {
+            return false;
+        }
+    }    
 }

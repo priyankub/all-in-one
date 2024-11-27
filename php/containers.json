@@ -231,7 +231,8 @@
         "THIS_IS_AIO=true",
         "IMAGINARY_SECRET=%IMAGINARY_SECRET%",
         "WHITEBOARD_SECRET=%WHITEBOARD_SECRET%",
-        "WHITEBOARD_ENABLED=%WHITEBOARD_ENABLED%"
+        "WHITEBOARD_ENABLED=%WHITEBOARD_ENABLED%",
+        "NVIDIA_DRIVER_CAPABILITIES=all"
       ],
       "stop_grace_period": 600,
       "restart": "unless-stopped",
@@ -246,7 +247,8 @@
       ],
       "cap_drop": [
         "NET_RAW"
-      ]
+      ],
+      "runtime": "nvidia"
     },
     {
       "container_name": "nextcloud-aio-notify-push",
